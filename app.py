@@ -5,6 +5,10 @@ import pickle, os
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/', methods=['GET'])
+def home():
+    return { 'message': 'Working correctly!' }
+
 @app.route('/predict', methods=['POST'])
 def predict():
     entrada = request.get_json(force=True)['answers']

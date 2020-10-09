@@ -13,9 +13,9 @@ def home():
 def predict():
     entrada = request.get_json(force=True)['answers']
 
-    modelo = open('modelo_DecisionTreeClassifier','rb')
+    modelo = open('modelo_DecisionTreeClassifier_64','rb')
     modelo = pickle.load(modelo)
-    kmeans = open('modelo_kmeans','rb')
+    kmeans = open('modelo_kmeans_64','rb')
     kmeans = pickle.load(kmeans)
 
     cluster = kmeans.predict([entrada])[0]
